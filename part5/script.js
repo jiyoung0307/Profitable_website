@@ -13,9 +13,18 @@ var stocks = {
     },
 };
 
+var stocksPrice = 0;
+
 $(document).ready(function() {
-    var stocksPrice = stocks["아마존"]["price"] * stocks["아마존"]["amount"] + 
-    stocks
+    // var stocksPrice = stocks["삼성전자"]["price"] * stocks["삼성전자"]["amount"] + 
+    // stocks["아마존"]["price"] * stocks["아마존"]["amount"] + 
+    // stocks["애플"]["price"] * stocks["애플"]["amount"];
+
+    for(var event in stocks) {
+        var stock = stocks[event];
+
+        stocksPrice = stocksPrice + stock["price"] * stock["amount"];
+    }
     
     console.log(stocksPrice);
 
